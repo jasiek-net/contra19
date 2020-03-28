@@ -70,7 +70,7 @@ export default {
     return {
       card: 'nic',
       options: [
-        { name: 'Wesprzyj lokalny biznes',
+        { name: 'Wesprzyj lokalnych przedsiębiorców',
           freq: 4, bg: '#FFCC80', text: '#222', hide: false, fontMod: 1 },
         { name: 'Walcz z fake newsami',
           freq: 4, bg: '#F48FB1', text: '#222', hide: false, fontMod: 1 },
@@ -78,15 +78,15 @@ export default {
           freq: 4, bg: '#81D4FA', text: '#222', hide: false, fontMod: 1.5 },
         { name: 'Zadbaj o jakość nauki online',
           freq: 4, bg: '#B39DDB', text: '#222', hide: false, fontMod: 1 },
-        { name: 'Zorganizuj czas najmłodszym',
+        { name: 'Zorganizuj czas najmłodszych',
           freq: 4, bg: '#C5E1A5', text: '#222', hide: false, fontMod: 1.5 },
         { name: 'Uratuj teatry',
           freq: 4, bg: '#F48FB1', text: '#222', hide: false, fontMod: 1 },
-        { name: 'Zaoferuj e-korepetycje',
+        { name: 'Zaoferuj darmowe e-korepetycje',
           freq: 4, bg: '#81D4FA', text: '#222', hide: false, fontMod: 1 },
         { name: 'Pomóż sąsiadom',
           freq: 4, bg: '#FFCC80', text: '#222', hide: false, fontMod: 1 },
-        { name: 'Zaplanuj życie po koronie',
+        { name: 'Zaplanuj swoje życie po koronawirusie',
           freq: 4, bg: 'white', text: '#222', hide: false, fontMod: 1 },
       ],
       settings: {
