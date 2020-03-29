@@ -131,7 +131,7 @@ function redrawWheel(canvas, angle, prizes) {
     const angleMod = Math.min(arcAngle2 - arcAngle1, 0.25);
     const lengthMod = 1 - Math.round(prize.name.length / 3) * 0.07;
     const fontMod = prize.fontMod || 1;
-    const fontSize = Math.max(10, 0.4 * r * angleMod * lengthMod * fontMod);
+    const fontSize = Math.max(20, 0.4 * r * angleMod * lengthMod * fontMod);
 
     // draw text
     ctx.fillStyle = prize.text || DEFAULT_TEXT_COLOR;
@@ -165,13 +165,13 @@ function redrawFrame(canvas) {
   ctx.beginPath();
   ctx.arc(cx, cy, r * 1.005, 0, 2 * Math.PI, true);
   ctx.arc(cx, cy, r * 0.985, 0, 2 * Math.PI, false);
-  ctx.fillStyle = '#424242';
+  ctx.fillStyle = '#E622A5';
   ctx.fill();
 
   // center ring
   ctx.shadowOffsetX = r / 100;
   ctx.shadowOffsetY = r / 100;
-  ctx.fillStyle = '#424242';
+  ctx.fillStyle = '#E622A5';
   ctx.beginPath();
   ctx.arc(cx, cy, r / 30, 0, 2 * Math.PI, false);
   ctx.fill();
@@ -183,7 +183,7 @@ function redrawFrame(canvas) {
   ctx.moveTo(-r * 1.01, -r * 0.05);
   ctx.lineTo(-r * 0.935, 0);
   ctx.lineTo(-r * 1.01, r * 0.05);
-  ctx.fillStyle = '#f44336';
+  ctx.fillStyle = '#E622A5';
   ctx.fill();
   ctx.restore();
 }
