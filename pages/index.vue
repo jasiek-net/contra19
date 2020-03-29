@@ -17,7 +17,7 @@
   top: 0;
   left: min(50vh, 50vw);
   right: 0;
-  padding: 15px;
+  padding: 20px 0;
   text-align: center;
 }
 .card-cont {
@@ -52,7 +52,11 @@
   border: 2px solid #333333;
   text-align: center;
   max-width: 350px;
-  margin: 15px auto;
+  margin: 0 auto;
+}
+.quest {
+  font-size: 100px;
+  margin: 30px 0;
 }
 
 @media (max-aspect-ratio: 2/3) {
@@ -84,6 +88,11 @@
         <br />
         <a class="button small" :href="card.href" target="_blank">Dowiedz się więcej</a>
       </div>
+      <div v-else class="card">
+        <div class="quest">
+          ?
+        </div>
+      </div>
     </div>
     <div class="wheel-cont">
       <Wheel
@@ -105,6 +114,7 @@ export default {
   },
   methods: {
     spin() {
+      this.card = null;
       this.$refs.wheel.startSpin();
     },
     result(ev) {
