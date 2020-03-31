@@ -52,7 +52,7 @@
   border: 2px solid #333333;
   border-radius: 2px;
   text-align: center;
-  max-width: 350px;
+  max-width: 300px;
   margin: 0 auto;
   font-family: 'Geogrotesque Regular';
   background: white;
@@ -93,10 +93,10 @@ h2 {
 
 @media (max-aspect-ratio: 2/3) {
   h2 {
-    font-size: 20px;
+    font-size: 14px;
   }
   .button {
-    font-size: 16px;
+    font-size: 14px;
   }
   .spin {
     position: absolute;
@@ -110,6 +110,12 @@ h2 {
     top: 100vw;
     left: 0;
     right: 0;
+  }
+  .card-wrap {
+    font-size: 0.8em;
+  }
+  .img {
+    height: 80px;
   }
 }
 .fade-enter-active, .fade-leave-active {
