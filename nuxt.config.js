@@ -53,7 +53,7 @@ export default {
     extend (config, ctx) {
     }
   },
-  // router: {
-  //   base: '/wheel/'
-  // }
+  router: {
+    base: '/wheel/'
+  }
 }

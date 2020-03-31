@@ -9,7 +9,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "deploy": "gh-pages -d docs -r github"
+    "deploy": "gh-pages -d docs --remote github"
   },
   "dependencies": {
     "nuxt": "^2.0.0"
