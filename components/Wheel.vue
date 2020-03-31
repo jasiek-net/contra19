@@ -93,7 +93,7 @@ function isAngleBetween(angle, lower, upper) {
 }
 
 // Redraw the wheel onto the given canvas, with the given offset angle and list of prizes.
-function redrawWheel(canvas, angle, prizes) {
+function redrawWheel(canvas, angle, prizes, final) {
   const r = Math.min(canvas.width, canvas.height) / 2.05;
   const cx = canvas.width / 2;
   const cy = canvas.height / 2;
@@ -101,8 +101,8 @@ function redrawWheel(canvas, angle, prizes) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   let g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
-  g.addColorStop(0, 'rgba(0,0,0,0)');
-  g.addColorStop(1, 'rgba(0,0,0,0.1)');
+  // g.addColorStop(0, 'rgba(0,0,0,0)');
+  // g.addColorStop(1, 'rgba(0,0,0,0.1)');
 
   const totalFreqs = getTotalFrequency(prizes);
   let cumulative = 0;
@@ -123,8 +123,11 @@ function redrawWheel(canvas, angle, prizes) {
     ctx.arc(cx, cy, r, arcAngle1, arcAngle2, false);
     ctx.fillStyle = prize.bg || getDefaultBgColor(i);
     ctx.fill();
-    ctx.fillStyle = g;
-    ctx.fill();
+    if (highlight && final) {
+      ctx.fillStyle = '#0AFF87';
+      ctx.fill();
+    }
+    // ctx.fillStyle = g;
     ctx.save();
 
     // calculate font size
@@ -135,7 +138,7 @@ function redrawWheel(canvas, angle, prizes) {
 
     // draw text
     ctx.fillStyle = prize.text || DEFAULT_TEXT_COLOR;
-    if (highlight) {
+    if (highlight && final) {
       ctx.shadowColor = prize.text || DEFAULT_TEXT_COLOR;
       ctx.shadowBlur = r / 15;
     }
@@ -158,32 +161,32 @@ function redrawFrame(canvas) {
 
   // outer ring
   ctx.save();
-  ctx.shadowOffsetX = r / 100;
-  ctx.shadowOffsetY = r / 100;
-  ctx.shadowBlur = r / 40;
-  ctx.shadowColor = 'rgba(0,0,0,0.2)';
+  // ctx.shadowOffsetX = r / 100;
+  // ctx.shadowOffsetY = r / 100;
+  // ctx.shadowBlur = r / 40;
+  // ctx.shadowColor = 'rgba(0,0,0,0.2)';
   ctx.beginPath();
   ctx.arc(cx, cy, r * 1.005, 0, 2 * Math.PI, true);
   ctx.arc(cx, cy, r * 0.985, 0, 2 * Math.PI, false);
-  ctx.fillStyle = '#E622A5';
+  ctx.fillStyle = '#000000';
   ctx.fill();
 
   // center ring
-  ctx.shadowOffsetX = r / 100;
-  ctx.shadowOffsetY = r / 100;
-  ctx.fillStyle = '#E622A5';
+  // ctx.shadowOffsetX = r / 100;
+  // ctx.shadowOffsetY = r / 100;
+  ctx.fillStyle = '#000000';
   ctx.beginPath();
-  ctx.arc(cx, cy, r / 30, 0, 2 * Math.PI, false);
+  ctx.arc(cx, cy, r / 25, 0, 2 * Math.PI, false);
   ctx.fill();
 
   // prize pointer
   ctx.translate(cx, cy);
   ctx.rotate(Math.PI / 2);
   ctx.beginPath();
-  ctx.moveTo(-r * 1.01, -r * 0.05);
-  ctx.lineTo(-r * 0.935, 0);
-  ctx.lineTo(-r * 1.01, r * 0.05);
-  ctx.fillStyle = '#E622A5';
+  ctx.moveTo(-r * 1.1, -r * 0.075);
+  ctx.lineTo(-r * 0.9, 0);
+  ctx.lineTo(-r * 1.1, r * 0.075);
+  ctx.fillStyle = '#000000';
   ctx.fill();
   ctx.restore();
 }
@@ -249,11 +252,11 @@ export default {
           self.angle += (speed * (totalTicks - ticks)) / totalTicks;
         }
 
-        redrawWheel(mainCanvas, self.angle, prizes);
-
         if (ticks < totalTicks) {
+          redrawWheel(mainCanvas, self.angle, prizes);
           window.requestAnimationFrame(mainLoop);
         } else {
+          redrawWheel(mainCanvas, self.angle, prizes, true);
           self.spinCompleted();
         }
       }
