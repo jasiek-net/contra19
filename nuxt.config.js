@@ -1,5 +1,6 @@
 
 export default {
+  buildDir: 'docs',
   mode: 'universal',
   /*
   ** Headers of the page
