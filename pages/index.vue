@@ -234,7 +234,7 @@ export default {
           fontMod: 1.1,
           quest: 'Zaoferuj korepetycje z przedmiotu, w którym jesteś dobry',
           href: 'https://www.contra-19.org/zdalniezdolni',
-          img: 'uratujteatry.png',
+          img: 'zdalniezdolni.png',
         },
         { name: 'sąsiedzka sztama',
           freq: 4,
