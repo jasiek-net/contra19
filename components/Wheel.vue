@@ -120,11 +120,11 @@ function redrawWheel(canvas, angle, prizes, final) {
     // draw arc
     ctx.beginPath();
     ctx.moveTo(cx, cy);
-    ctx.arc(cx, cy, r, arcAngle1, arcAngle2, false);
+    ctx.arc(cx, cy, r - 25, arcAngle1, arcAngle2, false);
     ctx.fillStyle = prize.bg || getDefaultBgColor(i);
     ctx.fill();
     if (highlight && final) {
-      ctx.fillStyle = '#0AFF87';
+      ctx.fillStyle = '#222222';
       ctx.fill();
     }
     // ctx.fillStyle = g;
@@ -139,15 +139,16 @@ function redrawWheel(canvas, angle, prizes, final) {
     // draw text
     ctx.fillStyle = prize.text || DEFAULT_TEXT_COLOR;
     if (highlight && final) {
-      ctx.shadowColor = prize.text || DEFAULT_TEXT_COLOR;
-      ctx.shadowBlur = r / 15;
+      ctx.fillStyle = '#FFFFFF';
+      // ctx.shadowColor = prize.text || DEFAULT_TEXT_COLOR;
+      // ctx.shadowBlur = r / 15;
     }
-    ctx.font = fontSize + "px 'Muli', sans-serif";
+    ctx.font = fontSize + "px 'Geogrotesque', tahoma, verdana, arial, sans-serif";
     ctx.textAlign = 'right';
     ctx.textBaseline = 'middle';
     ctx.translate(cx, cy);
     ctx.rotate(textAngle);
-    ctx.fillText(prize.name, r * 0.91, 0);
+    ctx.fillText(prize.name.toUpperCase(), r * 0.91, 0);
     ctx.restore();
   }
 }
@@ -161,10 +162,10 @@ function redrawFrame(canvas) {
 
   // outer ring
   ctx.save();
-  // ctx.shadowOffsetX = r / 100;
-  // ctx.shadowOffsetY = r / 100;
-  // ctx.shadowBlur = r / 40;
-  // ctx.shadowColor = 'rgba(0,0,0,0.2)';
+  ctx.shadowOffsetX = 0 //-r / 10;
+  ctx.shadowOffsetY = -5 //-r / 10;
+  ctx.shadowBlur = r / 40;
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.2)';
   ctx.beginPath();
   ctx.arc(cx, cy, r * 1.005, 0, 2 * Math.PI, true);
   ctx.arc(cx, cy, r * 0.985, 0, 2 * Math.PI, false);
@@ -174,18 +175,18 @@ function redrawFrame(canvas) {
   // center ring
   // ctx.shadowOffsetX = r / 100;
   // ctx.shadowOffsetY = r / 100;
-  ctx.fillStyle = '#000000';
-  ctx.beginPath();
-  ctx.arc(cx, cy, r / 25, 0, 2 * Math.PI, false);
-  ctx.fill();
+  // ctx.fillStyle = '#000000';
+  // ctx.beginPath();
+  // ctx.arc(cx, cy, r / 25, 0, 2 * Math.PI, false);
+  // ctx.fill();
 
   // prize pointer
   ctx.translate(cx, cy);
   ctx.rotate(Math.PI / 2);
   ctx.beginPath();
-  ctx.moveTo(-r * 1.1, -r * 0.075);
-  ctx.lineTo(-r * 0.9, 0);
-  ctx.lineTo(-r * 1.1, r * 0.075);
+  ctx.moveTo(-r * 1, -r * 0.075);
+  ctx.lineTo(-r * 0.87, 0);
+  ctx.lineTo(-r * 1, r * 0.075);
   ctx.fillStyle = '#000000';
   ctx.fill();
   ctx.restore();

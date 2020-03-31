@@ -1,6 +1,8 @@
 
 export default {
-  buildDir: 'docs',
+  generate: {
+    dir: 'docs',
+  },
   mode: 'universal',
   /*
   ** Headers of the page
@@ -24,6 +26,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~assets/style.scss',
   ],
   /*
   ** Plugins to load before mounting the App
@@ -49,5 +52,8 @@ export default {
     */
     extend (config, ctx) {
     }
-  }
+  },
+  // router: {
+  //   base: '/wheel/'
+  // }
 }

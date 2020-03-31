@@ -1,0 +1,40 @@
+// font-weight from https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
+// Regular
+@font-face {
+  font-family: "Geogrotesque Regular";
+  src: url('~assets/fonts/geogtq-rg-webfont.eot'),
+  url('~assets/fonts/geogtq-rg-webfont.eot?#iefix') format('embedded-opentype'),
+  url('~assets/fonts/geogtq-rg-webfont.woff') format('woff'),
+  url('~assets/fonts/geogtq-rg-webfont.svg') format('svg');
+  font-weight: 400;
+}
+
+/*// Medium
+@font-face {
+  font-family: "Geogrotesque";
+  src: url('~assets/fonts/geogtq-md-webfont.eot'),
+  url('~assets/fonts/geogtq-md-webfont.eot?#iefix') format('embedded-opentype'),
+  url('~assets/fonts/geogtq-md-webfont.woff') format('woff'),
+  url('~assets/fonts/geogtq-md-webfont.svg') format('svg');
+  font-weight: 500;
+}
+
+// Semibold
+@font-face {
+  font-family: "Geogrotesque";
+  src: url('~assets/fonts/geogtq-sb-webfont.eot'),
+  url('~assets/fonts/geogtq-sb-webfont.eot?#iefix') format('embedded-opentype'),
+  url('~assets/fonts/geogtq-sb-webfont.woff') format('woff'),
+  url('~assets/fonts/geogtq-sb-webfont.svg') format('svg');
+  font-weight: 600;
+}
+*/
+// Bold
+@font-face {
+  font-family: "Geogrotesque";
+  src: url('~assets/fonts/geogtq-b-webfont.eot'),
+  url('~assets/fonts/geogtq-b-webfont.eot?#iefix') format('embedded-opentype'),
+  url('~assets/fonts/geogtq-b-webfont.woff') format('woff'),
+  url('~assets/fonts/geogtq-b-webfont.svg') format('svg');
+  font-weight: 700;
+}

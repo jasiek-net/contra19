@@ -8,10 +8,15 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "gh-pages -d docs -r github"
   },
   "dependencies": {
     "nuxt": "^2.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "gh-pages": "^2.2.0",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2"
+  }
 }
