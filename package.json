@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d docs --remote github"
   },
   "dependencies": {
+    "@nuxtjs/gtm": "^2.2.3",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {

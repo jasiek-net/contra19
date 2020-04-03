@@ -37,7 +37,11 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/gtm',
   ],
+  gtm: {
+    id: 'GTM-MJQHCCM'
+  },
   /*
   ** Nuxt.js modules
   */
