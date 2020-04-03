@@ -6,16 +6,16 @@
   overflow: hidden;
 }
 .wheel-cont {
-  height: min(100vh, 100vw);
-  width: min(100vh, 100vw);
+  height: 100vh;
+  width: 100vh;
   position: absolute;
-  left: max(-50vh, -50vw);
+  left: -50vh;
   transform: rotate(90deg);
 }
 .copy-cont {
   position: absolute;
   top: 0;
-  left: min(50vh, 50vw);
+  left: 50vh;
   right: 0;
   padding: 20px 0;
   text-align: center;
@@ -23,7 +23,7 @@
 .card-cont {
   position: absolute;
   top: 150px;
-  left: min(50vh, 50vw);
+  left: 50vh;
   right: 0;
   padding: 15px;
 }
@@ -78,7 +78,7 @@ h2 {
 }
 
 .start {
-  top: min(50vw, 50vh);
+  top: 50vh;
   transition: top .5s linear;
 }
 
@@ -91,9 +91,13 @@ h2 {
   background-position: center center;
 }
 
+.mobile {
+  display: none;
+}
+
 @media (max-aspect-ratio: 2/3) {
   h2 {
-    font-size: 14px;
+    font-size: 20px;
   }
   .button {
     font-size: 14px;
@@ -117,6 +121,28 @@ h2 {
   .img {
     height: 80px;
   }
+
+  .mobile {
+    display: block;
+  }
+
+  .wheel-cont {
+    height: 100vw;
+    width: 100vw;
+    left: -50vw;
+  }
+
+  .copy-cont {
+    left: 50vw;
+  }
+  .card-cont {
+    padding-top: 0;
+  }
+  .start {
+    top: 50vw;
+    transition: top .5s linear;
+  }
+
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
@@ -130,7 +156,11 @@ h2 {
 <template>
   <div class="container">
     <div class="copy-cont">
-      <h2>WYLOSUJ WYZWANIE</h2>
+      <h2>
+        WYLOSUJ
+        <br class="mobile" />
+        WYZWANIE
+      </h2>
       <div class="button spin" :class="{ start: first }" @click.prevent="spin">{{ losuj }}</div>
     </div>
     <div class="card-cont">

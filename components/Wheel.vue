@@ -120,7 +120,7 @@ function redrawWheel(canvas, angle, prizes, final) {
     // draw arc
     ctx.beginPath();
     ctx.moveTo(cx, cy);
-    ctx.arc(cx, cy, r - 25, arcAngle1, arcAngle2, false);
+    ctx.arc(cx, cy, r - 15, arcAngle1, arcAngle2, false);
     ctx.fillStyle = prize.bg || getDefaultBgColor(i);
     ctx.fill();
     if (highlight && final) {
@@ -134,7 +134,7 @@ function redrawWheel(canvas, angle, prizes, final) {
     const angleMod = Math.min(arcAngle2 - arcAngle1, 0.25);
     const lengthMod = 1 - Math.round(prize.name.length / 3) * 0.07;
     const fontMod = prize.fontMod || 1;
-    const fontSize = Math.max(20, 0.4 * r * angleMod * lengthMod * fontMod);
+    const fontSize = Math.max(18, 0.4 * r * angleMod * lengthMod * fontMod);
 
     // draw text
     ctx.fillStyle = prize.text || DEFAULT_TEXT_COLOR;
@@ -266,7 +266,7 @@ export default {
     }
   },
   mounted() {
-    this.resizeIntervalId = setInterval(this.resize, 10);
+    this.resizeIntervalId = setInterval(this.resize, 500);
   },
   beforeDestroy() {
     clearInterval(this.resizeIntervalId);
