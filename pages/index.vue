@@ -155,6 +155,7 @@ h2 {
 
 <template>
   <div class="container">
+    <!-- <img v-for="o in options" :src="require(`@/assets/img/${ o.img }`)" /> -->
     <div class="copy-cont">
       <h2>
         WYLOSUJ
@@ -254,7 +255,7 @@ export default {
           fontMod: 1.1,
           quest: 'Obejrzyj spektakl online i wesprzyj polską kulturę',
           href: 'https://www.contra19.org/przezyjtowpizamie',
-          img: 'przezyjtowpizamie.png',
+          img: 'przezyj.png',
         },
         {
           name: 'zdalnie zdolni',
@@ -265,7 +266,7 @@ export default {
           fontMod: 1.1,
           quest: 'Zaoferuj korepetycje z przedmiotu, w którym jesteś dobry',
           href: 'https://www.contra19.org/zdalniezdolni',
-          img: 'zdalniezdolni.png',
+          img: 'zdalnie.png',
         },
         {
           name: 'ugotuj coś z niczego',
@@ -287,7 +288,7 @@ export default {
           fontMod: 1.1,
           quest: 'Rozmarz się i zrelaksuj wymyślając listę rzeczy do zrobienia po koronawirusie',
           href: 'https://www.contra19.org/akcjateleportacja',
-          img: 'akcjateleportacja.png',
+          img: 'akcja.png',
         },
         {
           name: 'tańcz, nikt nie patrzy',
@@ -298,7 +299,7 @@ export default {
           fontMod: 1.1,
           quest: 'Potańcz w domu do chillowej muzyki i zadbaj o siebie!',
           href: 'https://www.contra19.org/zatanczzvibem',
-          img: 'tanczniktniepatrzy.png',
+          img: 'tancz.png',
         },
         {
           name: 'pokoloruj świat',
